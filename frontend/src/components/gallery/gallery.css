@@ -1,0 +1,86 @@
+.gallery{
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    color: var(--primary-color-white);
+}
+.gallery.active{
+    display: flex;
+}
+
+.gallery-title{
+    font-size: 3rem;
+    font-weight: 600;   
+}
+
+.gallery-title,
+.gallery-info{
+    text-align: center;
+}
+
+.gallery-info{
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
+
+.gallery__images{
+    --gap: 2rem;
+    /* bbd, not sure why, but this is necessary */
+    --image-cnt: 5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: calc(var(--gap) * var(--image-cnt));
+    overflow-y: auto;
+}
+
+.gallery-image{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: var(--primary-color-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-img-src{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-btn{
+    position: absolute;
+    /* to center nested svg */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.15rem;
+}
+
+.gallery-delete-btn{
+    right: 8px;
+    top: 8px;
+    background-color: var(--primary-color-gray);
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+}
+
+.gallery-btn svg{
+    font-size: 2rem;
+    color: var(--primary-color-yellow);
+}
+
+/* .gallery-delete-btn svg{
+    color: rgb(255, 0, 0);
+} */
+
+.gallery-image .hidden{
+    display: none;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/coin.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Vilniaus Licėjaus Šimtadienis 2024" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.webp" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>Šimtadienis 🎆</title>
+  <!-- Font -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500&display=swap');
+  </style>
+  <!-- Inline Preloader Styling -->
+  <!-- NOT PERMENANT, TBC! -->
+  <style>
+    .loading {
+      -webkit-animation: scaleout 1s infinite ease-in-out;
+      animation: scaleout 1s infinite ease-in-out;
+      background-color: #057918;
+      border-radius: 50%;
+      height: 6rem;
+      width: 6rem;
+    }
+
+    .loading-container {
+      height: 100dvh;
+      width: 100vw;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes scaleout {
+      0% {
+        transform: scale(0.0);
+      }
+
+      100% {
+        transform: scale(1.0);
+        opacity: 0.5;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <dialog id="modal-root">
+  </dialog>
+  <div id="root">
+    <!-- Preloader -->
+    <div id="spinner" class="loading-container">
+      <div class="loading"></div>
+    </div>
+  </div>
+</body>
+
+</html>

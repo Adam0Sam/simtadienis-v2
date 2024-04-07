@@ -1,0 +1,68 @@
+/* burger menu */
+#menu {
+    --translation-duration: 0.5s;
+    position: absolute;
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100dvh;
+    transition: transform var(--translation-duration) ease;
+    background-color: var(--primary-color-yellow);
+    overflow-x: hidden;
+}
+
+#menu.from-home {
+    transform: translateX(100%);
+}
+
+#menu.active.from-home{
+    transform: translateX(-100%);
+}
+
+#menu.from-leaderboard,
+#menu.from-gallery,
+#menu.from-chat,
+#menu.from-video {
+    transform: translateX(-200%);
+}
+
+#menu.active.from-leaderboard.active,
+#menu.active.from-gallery,
+#menu.active.from-chat,
+#menu.active.from-video  {
+    transform: translateX(-100%);
+}
+
+.menu-img-container {
+    position: relative;
+    height: min(10vh, 120px);
+    transform: translateY(100%);
+    transition: transform 0.2s ease-in-out;
+    transition-delay: var(--translation-duration);
+    background-image: url('../../assets/images/heap-hundred-dollar-.webp');
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat-x;
+}
+
+.menu-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-img-container.img-one {
+    transform: rotate(180deg) translateY(100%);
+}
+
+#menu.active .menu-img-container {
+    transform: translateY(0);
+}
+
+#menu.active .menu-img-container.img-one {
+    transform: rotate(180deg) translateY(0);
+}

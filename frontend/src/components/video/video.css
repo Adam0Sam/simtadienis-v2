@@ -1,0 +1,85 @@
+.video-page{
+    --like-btn-height: 2rem;
+    width: 100%;
+    padding-bottom: calc(var(--total-selector-height) + var(--like-btn-height));
+    overflow: auto;
+}
+.video-page.active{
+    display: block;
+}
+.video__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
+.video{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.video__bottom{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+}
+
+.video-title{
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.video__likes{
+    font-size: 1.5rem;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.like-btn {
+    font-size: 2.25rem;
+    color: red;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.like-btn.voted {
+    animation: like-animation 0.3s ease-in-out;
+}
+
+@keyframes like-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.video-btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    color: white;
+    font-size: 2.5rem;
+    transition: transform 0.3s;
+}
+
+.video-btn.right{
+    transform: rotate(180deg);
+}

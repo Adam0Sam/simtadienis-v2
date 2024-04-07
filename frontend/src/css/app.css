@@ -1,0 +1,215 @@
+/* VARIABLES */
+:root {
+    /* colors */
+    --primary-color-red: #d97f67;
+    --primary-color-yellow: #e8c060;
+    --primary-color-green: #2e5445;
+    --primary-color-black: #000000;
+    --primary-color-white: aliceblue;
+
+    --primary-color-gray: rgb(113, 112, 112);
+    --secondary-color-red: #d97f67;
+
+    --error-color: #c10000;
+
+    --box-shadow-default: 3px 3px 0 1px rgb(0, 0, 0);
+    --box-shadow-default-thin: 1px 1px 0 1px rgb(0, 0, 0);
+    --box-shadow-valid: 3px 3px 0 1px var(--primary-color-green);
+    --box-shadow-invalid: 3px 3px 0 1px var(--error-color);
+
+    /* sizes */
+    --total-selector-height: 23dvh;
+    --selector-padding-top: 3rem;
+    --selector-margin-bottom: 3rem;
+    --actual-selector-height: 100px;
+    --midpoint-selector-height: calc(var(--actual-selector-height) - var(--selector-padding-top));
+    --burger-bar-size: 2px;
+    /* so that page doesnt conflict with page__controls */
+    --page-margin-top: calc(var(--selector-padding-top) + (var(--actual-selector-height) / 2) - (var(--burger-bar-size) * 3) + 3rem);
+    --x-padding: 1rem;
+}
+
+/* CSS RESET */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvh;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+p,
+li {
+    max-width: var(--p-max-width, 65ch);
+    text-wrap: pretty;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,500,400,300);
+
+/* BODY */
+body {
+    background-color: var(--primary-color-black);
+    opacity: 1;
+    padding: 0;
+    /* background-image: linear-gradient(30deg, #040404 12%, transparent 12.5%, transparent 87%, #04061a 87.5%, #04061a), linear-gradient(150deg, #04061a 12%, transparent 12.5%, transparent 87%, #04061a 87.5%, #04061a), linear-gradient(30deg, #04061a 12%, transparent 12.5%, transparent 87%, #04061a 87.5%, #04061a), linear-gradient(150deg, #04061a 12%, transparent 12.5%, transparent 87%, #04061a 87.5%, #04061a), linear-gradient(60deg, #04061a77 25%, transparent 25.5%, transparent 75%, #04061a77 75%, #04061a77), linear-gradient(60deg, #04061a77 25%, transparent 25.5%, transparent 75%, #04061a77 75%, #04061a77); */
+    background-size: 8px 14px;
+    background-position: 0 0, 0 0, 4px 7px, 4px 7px, 0 0, 4px 7px;
+    font-family: 'Cormorant', Arial, sans-serif;
+    overflow: hidden;
+}
+
+#modal-root {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border: none;
+    background-color: transparent;
+    z-index: 9999;
+    display: block;
+}
+
+/* PAGE CONTAINER */
+.page-carousel {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100dvh;
+    /* overflow: hidden; */
+}
+
+.user-page {
+    display: none;
+    height: 100dvh;
+}
+
+.side-page {
+    /* so that page doesnt conflict with page__controls */
+    margin-top: var(--page-margin-top);
+}
+
+.leaderboard-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leaderboard-page .leaderboard {
+    margin-top: 3rem;
+}
+
+.offscreen {
+    display: none;
+}
+
+.errmsg {
+    color: var(--error-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.errmsg.active {
+    opacity: 1;
+}
+
+.digit {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+
+.ad-banner {
+    object-fit: contain;
+    flex-shrink: 1;
+    max-height: 50px;
+}
+
+.mini-profile-container {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.mini-profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* CSS FOR VISUAL TESTS (will be deleted in production) */
+.content {
+    height: 350vh;
+}
+
+.line {
+    display: inline-block;
+}
