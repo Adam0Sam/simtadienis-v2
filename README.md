@@ -83,9 +83,9 @@ npm install npm@latest -g
 <!-- ROADMAP -->
 
 ## Roadmap
+See the [frontend roadmap](https://github.com/Adam0Sam/simtadienis-v2/tree/main/frontend) and [backend roadmap](https://github.com/Adam0Sam/simtadienis-v2/tree/backend/main/backend) 
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
-
+See the [open issues](https://github.com/Adam0Sam/simtadienis-v2/issues) for a full list of proposed features (and known issues).
 <!-- CONTRIBUTING -->
 
 ## Contributing
