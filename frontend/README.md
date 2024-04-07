@@ -1,11 +1,10 @@
-## 0.1.1
-- [x] Refactored UserPage
+# 2.0.1
+- [ ] Refactored UserPage
 - [ ] Refactored AdminPage
-- [ ] JSDocs in all components
 
-# 0.1.2
-- [X] Global Chat Page
-- [ ] Leaderboard position update
+# 2.0.2
+- [ ] Comments in UserPage
+- [ ] Comments in AdminPage
 
-# 0.1.3
-- [ ] Clean up css, make the code more **dry**
+# 2.1.1
+- [ ] CSS -> SCSS
