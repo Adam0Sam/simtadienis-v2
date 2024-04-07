@@ -1,4 +1,4 @@
-<p align="center" name="readme-top">This is fork/spiritual successor to the <a href="https://github.com/81GB3N/simtadienis">original simtadienis repository</a>, written by me and <a href="https://github.com/81GB3N">Jonas</a></p>
+<p align="center" name="readme-top">This is a fork/spiritual successor to the <a href="https://github.com/81GB3N/simtadienis">original simtadienis repository</a>, written by me and <a href="https://github.com/81GB3N">Jonas</a></p>
 
 <!-- PROJECT LOGO -->
 <br />
